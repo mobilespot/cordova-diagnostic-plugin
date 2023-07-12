@@ -10,7 +10,7 @@ const PREFERENCE_NAME = PLUGIN_ID + ".modules";
 
 const MODULES = [
     "LOCATION",
-    "BLUETOOTH",
+    /* "BLUETOOTH",
     "WIFI",
     "CAMERA",
     "NOTIFICATIONS",
@@ -21,7 +21,7 @@ const MODULES = [
     "MOTION",
     "NFC",
     "EXTERNAL_STORAGE",
-    "AIRPLANE_MODE"
+    "AIRPLANE_MODE" */
 ];
 
 const COMMENT_START = "<!--";
