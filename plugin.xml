@@ -88,6 +88,49 @@
         </config-file>
         <!--END_MODULE BLUETOOTH-->
 
+        <!--BEGIN_MODULE CALENDAR-->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Diagnostic_Calendar">
+                <param name="ios-package" value="Diagnostic_Calendar" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <js-module src="www/ios/diagnostic.calendar.js" name="Diagnostic_Calendar">
+            <merges target="cordova.plugins.diagnostic.calendar" />
+        </js-module>
+
+        <framework src="EventKit.framework" />
+
+        <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
+            <string>This app requires calendar access to function properly.</string>
+        </config-file>
+
+        <header-file src="src/ios/Diagnostic_Calendar.h" />
+        <source-file src="src/ios/Diagnostic_Calendar.m" />
+        <!--END_MODULE CALENDAR-->
+
+        <!--BEGIN_MODULE REMINDERS-->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Diagnostic_Reminders">
+                <param name="ios-package" value="Diagnostic_Reminders" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <js-module src="www/ios/diagnostic.reminders.js" name="Diagnostic_Reminders">
+            <merges target="cordova.plugins.diagnostic.reminders" />
+        </js-module>
+
+        <framework src="EventKit.framework" />
+
+        <config-file target="*-Info.plist" parent="NSRemindersUsageDescription">
+            <string>This app requires reminders access to function properly.</string>
+        </config-file>
+        
+        <header-file src="src/ios/Diagnostic_Reminders.h" />
+        <source-file src="src/ios/Diagnostic_Reminders.m" />
+        <!--END_MODULE REMINDERS-->
     </platform>
 
     <platform name="android">
@@ -143,5 +186,26 @@
         <source-file src="src/android/Diagnostic_Bluetooth.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE BLUETOOTH-->
 
+      
+        <!--BEGIN_MODULE CALENDAR-->
+        <js-module name="Diagnostic_Calendar" src="www/android/diagnostic.calendar.js">
+            <merges target="cordova.plugins.diagnostic.calendar" />
+        </js-module>
+        <!--END_MODULE CALENDAR-->
+
+        <!--BEGIN_MODULE EXTERNAL_STORAGE-->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Diagnostic_External_Storage" >
+                <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <js-module name="Diagnostic_External_Storage" src="www/android/diagnostic.external_storage.js">
+            <merges target="cordova.plugins.diagnostic.external_storage" />
+        </js-module>
+
+        <source-file src="src/android/Diagnostic_External_Storage.java" target-dir="src/cordova/plugins" />
+        <!--END_MODULE EXTERNAL_STORAGE-->
     </platform>
 </plugin>
