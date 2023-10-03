@@ -9,10 +9,10 @@ const PLUGIN_ID = "cordova.plugins.diagnostic";
 const PREFERENCE_NAME = PLUGIN_ID + ".modules";
 
 const MODULES = [
-    "LOCATION",
     "CALENDAR",
     "REMINDERS",
    /*  "WIFI",
+    "LOCATION",
     "CAMERA",
     "BLUETOOTH",
     "NOTIFICATIONS",
