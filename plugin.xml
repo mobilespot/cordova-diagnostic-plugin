@@ -75,6 +75,10 @@
         <config-file target="*-Info.plist" parent="NSRemindersUsageDescription">
             <string>This app requires reminders access to function properly.</string>
         </config-file>
+
+        <config-file target="*-Info.plist" parent="NSCalendarsWriteOnlyAccessUsageDescription">
+            <string>This app requires calendar access to function properly.</string>
+        </config-file>
         
         <header-file src="src/ios/Diagnostic_Reminders.h" />
         <source-file src="src/ios/Diagnostic_Reminders.m" />
